@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/constsVarients"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:alpha="0.5"
+    android:layout_margin="8dp"
+    android:background="@drawable/product_item_border_black">
+
+    <TextView
+        android:id="@+id/lblColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Color: "
+        android:textSize="14sp"
+        android:textColor="@color/colorMagentaText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imgColor"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="4dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@+id/lblColor"
+        app:layout_constraintBottom_toBottomOf="@+id/lblColor"
+        app:layout_constraintTop_toTopOf="@+id/lblColor"/>
+
+    <TextView
+        android:id="@+id/lblSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Size: "
+        android:textSize="14sp"
+        android:textColor="@color/colorMagentaText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblColor"/>
+
+    <TextView
+        android:id="@+id/txtSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="N/A"
+        android:textSize="14sp"
+        android:textColor="@color/colorMagentaText"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@+id/lblSize"
+        app:layout_constraintBottom_toBottomOf="@+id/lblSize"
+        app:layout_constraintTop_toTopOf="@+id/lblSize"/>
+
+    <TextView
+        android:id="@+id/lblPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:padding="2dp"
+        android:textColor="@color/textcolor"
+        android:textSize="18sp"
+        android:text="asdadada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblSize"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

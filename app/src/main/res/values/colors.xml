@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">#141518</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="white">#ffffff</color>
+
+    <color name="dotActive">#3A4450</color>
+    <color name="dotInActive">#9CA1A7</color>
+    <color name="textcolor">#040404</color>
+    <color name="colorMagentaText">#263238</color>
 </resources>

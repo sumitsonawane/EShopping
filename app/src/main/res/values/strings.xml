@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EshoppingHeady</string>
+    <string name="title_activity_splashscreen">Splashscreen</string>
+    <string name="imgTransition">imgTransition</string>
 </resources>
