@@ -62,6 +62,7 @@ class HomeActivity : AppCompatActivity() {
             val getRankPRoducts = getAllProducts?.rankings?.filter { rankname.equals(it.ranking) }
             val getCommonProducts = getAllProducts?.categories?.flatMap { it.products }
                 ?.intersect(getRankPRoducts!!.flatMap { it.products })
+            productListAdapter?.clearData()
             productListAdapter?.setProducts(getCommonProducts!!.toMutableList())
 
         }
@@ -76,6 +77,7 @@ class HomeActivity : AppCompatActivity() {
         val mLayoutManager = LinearLayoutManager(this, HORIZONTAL, false)
         recyclerCategory.layoutManager = mLayoutManager
         categoryAdapter = CategoryAdapter(categoriesItems) { catname ->
+            productListAdapter?.clearData()
             productListAdapter?.setProducts(getAllProducts?.categories?.filter { res -> res.name == catname }?.flatMap { it.products } as MutableList<ProductX>)
         }
         recyclerCategory.disableItemAnimator()

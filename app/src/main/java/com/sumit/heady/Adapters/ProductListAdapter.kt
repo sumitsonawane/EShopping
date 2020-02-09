@@ -90,4 +90,9 @@ class ProductListAdapter(
 
     }
 
+    fun clearData() {
+        this.productListItems?.clear()
+        notifyDataSetChanged()
+    }
+
 }
