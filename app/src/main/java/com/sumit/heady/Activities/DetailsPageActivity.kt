@@ -20,6 +20,8 @@ class DetailsPageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_page)
 
+        toolbar.setNavigationOnClickListener { finish() }
+
         getProductDetails = Parcels.unwrap(intent?.getParcelableExtra(PRODUCT_LIST))
         setRecyclerAdapter()
         setDetails()

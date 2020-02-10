@@ -22,7 +22,7 @@
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:layout_collapseMode="pin"
                 app:layout_constraintTop_toTopOf="parent"
-                app:navigationIcon="@drawable/ic_launcher_foreground"
+                app:navigationIcon="@drawable/ic_arrow_back_black_24dp"
                 app:title="Product Details" />
 
 
