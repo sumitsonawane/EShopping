@@ -2,6 +2,7 @@ package com.sumit.heady.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -25,6 +26,7 @@ import java.net.HttpURLConnection.HTTP_OK
  */
 class HomeActivity : AppCompatActivity() {
 
+    private lateinit var productsViewModel: HomeViewModel
     private var getAllProducts: GetAllProducts? = null
     private lateinit var rankingBannerAdapter: RankingBannerAdapter
     val mostRankingItems = ArrayList<String>()
@@ -39,12 +41,16 @@ class HomeActivity : AppCompatActivity() {
 
         setUpToolbar()
 
+        val productsViewFactory = HomeViewModel().createFactory()
+         productsViewModel =
+            ViewModelProviders.of(this, productsViewFactory).get(HomeViewModel::class.java)
+
         setRankingsAdapter()
         setupCatogoriesAdapter()
         getProductsViewmodel()
         setupProductsAdapter()
 
-        swHomepage.setOnRefreshListener { getProductsViewmodel() }
+        swHomepage.setOnRefreshListener { productsViewModel.callProductsAPI() }
     }
 
     private fun setUpToolbar() {
@@ -112,11 +118,9 @@ class HomeActivity : AppCompatActivity() {
      * get All products from API with Viewmodel observation and set it to respective adapters
      */
     private fun getProductsViewmodel() {
-        val productsViewFactory = HomeViewModel().createFactory()
-        val productsViewModel =
-            ViewModelProviders.of(this, productsViewFactory).get(HomeViewModel::class.java)
 
-        productsViewModel.callProductsAPI().observe(this, Observer {
+
+        productsViewModel?.getProductsList()?.observe(this, Observer {
 
             when (it.status) {
                 ApiResponseStats.Status.COMPLETED -> {
@@ -154,4 +158,5 @@ class HomeActivity : AppCompatActivity() {
 
         })
     }
+
 }
